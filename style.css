@@ -1,249 +1,245 @@
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Segoe UI', sans-serif;
-}
-
-body{
-  background:#f5f5f5;
-  overflow-x:hidden;
-}
-
-/* DESFOQUE */
-
-.blurred{
-  filter:blur(10px);
-  transition:.3s;
-}
-
-/* NAVBAR */
-
-.navbar{
-  width:100%;
-
-  position:absolute;
-  top:0;
-  left:0;
-
-  z-index:20;
-
-  padding:25px 60px;
-
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-
-.logo{
-  font-size:34px;
-  font-weight:800;
-  color:#ff2d2d;
-}
-
-.cine{
-  color:#020326;
-}
-
-nav{
-  display:flex;
-  gap:40px;
-}
-
-nav a{
-  text-decoration:none;
-  color:#8f8f8f;
-  font-size:18px;
-  transition:.3s;
-}
-
-nav a:hover,
-nav .active{
-  color:#ff2d2d;
-}
-
-/* SEARCH */
-
-.search-box{
-  width:300px;
-  height:50px;
-
-  background:rgba(255,255,255,.18);
-
-  backdrop-filter:blur(10px);
-
-  border-radius:18px;
-
-  display:flex;
-  align-items:center;
-
-  padding:0 18px;
-
-  border:1px solid rgba(255,255,255,.08);
-}
-
-.search-icon{
-  margin-right:10px;
-  color:#c7c7c7;
-}
-
-.search-box input{
-  width:100%;
-  height:100%;
-
-  border:none;
-  outline:none;
-
-  background:transparent;
-
-  color:white;
-  font-size:15px;
-}
-
-.search-box input::placeholder{
-  color:#c0c0c0;
-}
-
-/* HERO */
-
-.hero{
-  width:100%;
-  height:100vh;
-
-  position:relative;
-
-  display:flex;
-
-  overflow:hidden;
-
-  background:#f5f5f5;
-}
-
-/* LADO ESQUERDO */
-
-.hero-content{
-  width:36%;
-
-  padding:180px 60px;
-
-  position:relative;
-  z-index:10;
-
-  background:#f5f5f5;
-}
-
-.tagline{
-  color:#ff2d2d;
-  margin-bottom:25px;
-
-  font-style:italic;
-
-  position:relative;
-
-  padding-left:50px;
-}
-
-.tagline::before{
-  content:"";
-
-  width:35px;
-  height:2px;
-
-  background:#ff2d2d;
-
-  position:absolute;
-
-  left:0;
-  top:50%;
-}
-
-.hero-content h1{
-  font-size:110px;
-
-  line-height:.9;
-
-  color:#020326;
-
-  margin-bottom:25px;
-
-  font-weight:900;
-}
-.description{
-  color:#666;
-
-  font-size:22px;
-
-  line-height:1.5;
-
-  margin-bottom:40px;
-}
-
-/******************* BOTÕES ****************/
-
-.buttons{
-  display:flex;
-  gap:20px;
-}
-
-.btn-preto,
-.btn-branco{
-  width:170px;
-  height:65px;
-
-  border:none;
-  border-radius:18px;
-
-  font-size:18px;
-  font-weight:700;
-
-  cursor:pointer;
-
-  transition:.3s;
-}
-
-.btn-preto{
-  background:#020826;
-  color:white;
-
-  box-shadow:0 10px 20px rgba(0,0,0,.18);
-}
-
-.btn-branco{
-  background:white;
-  color:#111;
-
-  box-shadow:0 10px 20px rgba(0,0,0,.08);
-}
-
-/*************** animação ****************/
-.btn-preto:hover,
-.btn-branco:hover{
-  transform:translateY(-4px);
-}
-
-/******************* IMAGEM HERO ***************/
-
-.hero-image-side{
-  position:absolute;
-
-  right:0;
-  top:0;
-
-  width:78%;
-  height:78%;
-
-  overflow:hidden;
-
-  border-bottom-left-radius:90px;
-
-  box-shadow:
-  -10px 10px 30px rgba(0,0,0,.18);
-}
-
-.hero-image-side img{
-  width:100%;
-  height:100%;
-
-  object-fit:cover;
-}
-
+/* Reset geral: remove margens, paddings padrão do navegador
+   e define box-sizing e fonte para todos os elementos */
+   *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
+  }
+  
+  /* Cor de fundo geral da página e remove scroll horizontal */
+  body{
+    background:#f5f5f5;
+    overflow-x:hidden;
+  }
+  
+  /* ==================== DESFOQUE ==================== */
+  /* (reservado para futuros estilos de blur/glassmorphism) */
+  
+  /* ==================== NAVBAR ==================== */
+  
+  /* Barra de navegação fixa no topo, sobrepõe o conteúdo via z-index */
+  .barnav{
+    width:100%;
+  
+    position:absolute;
+    top:0;
+    left:0;
+  
+    z-index:20; /* fica acima do hero */
+  
+    padding:25px 60px;
+  
+    display:flex;
+    align-items:center;
+    justify-content:space-between; /* logo | nav | pesquisa nas extremidades */
+  }
+  
+  /* Nome/logo do site em vermelho e azul escuro */
+  .logo{
+    font-size:34px;
+    font-weight:800;
+    color:#ff2d2d; /* "EXPLORE" em vermelho */
+  }
+  
+  /* Parte "CINE" da logo em azul escuro */
+  .cine{
+    color:#020326;
+  }
+  
+  /* Links do menu em linha com espaçamento entre eles */
+  nav{
+    display:flex;
+    gap:40px;
+  }
+  
+  /* Estilo dos links: sem sublinhado, cor cinza, com transição suave */
+  nav a{
+    text-decoration:none;
+    color:#8f8f8f;
+    font-size:18px;
+    transition:.3s; /* para efeito hover no futuro */
+  }
+  
+  /* ==================== SEARCH ==================== */
+  
+  /* Caixa de pesquisa com efeito glassmorphism (fundo translúcido + blur) */
+  .caixa-pesquisa{
+    width:300px;
+    height:50px;
+  
+    background:rgba(255,255,255,.18); /* branco semi-transparente */
+  
+    backdrop-filter:blur(10px); /* desfoque do que está atrás */
+  
+    border-radius:18px;
+  
+    display:flex;
+    align-items:center;
+  
+    padding:0 18px;
+  
+    border:1px solid rgba(255,255,255,.08); /* borda levemente visível */
+  }
+  
+  /* Ícone de lupa com margem direita para separar do input */
+  .pesquisa-icon{
+    margin-right:10px;
+    color:#c7c7c7;
+  }
+  
+  /* Input transparente que herda o tamanho da caixa-pesquisa */
+  .caixa-pesquisa input{
+    width:100%;
+    height:100%;
+  
+    border:none;
+    outline:none; /* remove borda de foco padrão */
+  
+    background:transparent;
+  
+    color:white;
+    font-size:15px;
+  }
+  
+  /* ==================== HERO ==================== */
+  
+  /* Seção principal: ocupa a tela inteira, esconde overflow para efeitos visuais */
+  .hero{
+    width:100%;
+    height:100vh; /* altura total da viewport */
+    position:relative;
+
+    justify-content: space-between;
+    display: flex;
+  
+    overflow:hidden; /* esconde elementos que saem dos limites */
+    background:#f5f5f5;
+  }
+
+  .imagem-central{
+    position:absolute;
+    z-index: 1;
+
+    right: 100px;
+    margin-top: 20px;
+  
+    width: 40%;
+    height: 96%;
+  
+    overflow:hidden;
+  
+
+  }
+  
+  .imagem-central img{
+    width:100%;
+    height:100%;
+  
+    object-fit:cover;
+  }
+  /* ==================== LADO ESQUERDO ==================== */
+  
+  /* Coluna esquerda do hero com o texto e botões */
+  .hero-esquerdo{
+    width:32%;
+  
+    padding:180px 60px; /* padding top alto para descer do navbar */
+    background-color: transparent;
+  
+    position:relative;
+    z-index: 2;
+  
+   
+  }
+  
+  /* Badge "Destaque" em vermelho itálico com linha decorativa à esquerda */
+  .tagline{
+    color:#ff2d2d;
+    margin-bottom:25px;
+  
+    font-style:italic;
+  
+    position:relative; /* necessário para o ::before ser posicionado aqui dentro */
+  
+    padding-left:50px; /* espaço para a linha decorativa */
+  }
+  
+  /* Linha horizontal vermelha decorativa antes do texto "Destaque" */
+  .tagline::before{
+    content:""; /* obrigatório para o pseudo-elemento aparecer */
+  
+    width:35px;
+    height:2px;
+  
+    background:#ff2d2d;
+  
+    position:absolute;
+  
+    left:0;
+    top:50%; /* centraliza verticalmente com o texto */
+  }
+  
+  /* Título grande do conteúdo em destaque */
+  .hero-esquerdo h1{
+    font-size:140px;
+  
+    line-height:.9; /* linha bem compacta para títulos grandes */
+    color:#020326;
+    margin-bottom:25px;
+  
+    font-weight:900;
+  }
+  
+  /* Sinopse do conteúdo em cinza com boa legibilidade */
+  .descricao{
+    color:#666;
+  
+    font-size:25px;
+  
+    line-height:1.5;
+  
+    margin-bottom:40px;
+  }
+  
+  /* ==================== BOTÕES ==================== */
+  
+  /* Container dos botões lado a lado */
+  .buttons{
+    display:flex;
+    gap:20px;
+  }
+  
+  /* Estilos base compartilhados entre os dois botões */
+  .btn-preto,
+  .btn-branco{
+    width:310px;
+    height:105px;
+  
+    border:none;
+    border-radius:18px;
+  
+    font-size:18px;
+    font-weight:700;
+  
+    cursor:pointer;
+    margin-top: 20px;
+  }
+  
+  /* Botão principal escuro com sombra mais intensa */
+  .btn-preto{
+    background:#020826;
+    color:white;
+    font-size: 25px;
+  
+    box-shadow:0 10px 20px rgba(0,0,0,.18);
+  }
+  
+  /* Botão secundário branco com sombra mais suave */
+  .btn-branco{
+    background:white;
+    color:#111;
+    font-size: 25px;
+  
+    box-shadow:0 10px 20px rgba(0,0,0,.08);
+  }

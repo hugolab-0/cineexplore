@@ -5,82 +5,82 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cine Explore</title>
 
+  <!-- Folha de estilos principal -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div id="main-wrapper">
+  <!-- Container principal que envolve toda a página -->
+  <div id="main">
 
-    <!-- NAVBAR -->
+    <!-- ==================== NAVBAR ==================== -->
 
-    <header class="navbar">
+    <header class="barnav">
 
+      <!-- Logo com imagem + texto do nome do site -->
       <div class="logo">
-        🎬 <span class="cine">CINE</span> EXPLORE
+        <img src="./img/logo.png" alt=""> <span class="cine">CINE</span> EXPLORE
       </div>
 
+      <!-- Menu de navegação principal -->
       <nav>
-        <a href="#" class="active">Início</a>
+        <a href="#">Início</a>
         <a href="#">Filme</a>
         <a href="#">Séries</a>
         <a href="#">Home</a>
       </nav>
 
-      <div class="search-box">
-
-        <span class="search-icon">🔍</span>
-
-        <input 
-          type="text" 
-          placeholder="Filme ou série..."
-        >
-
+      <!-- Barra de pesquisa com ícone e input -->
+      <div class="caixa-pesquisa">
+        <span class="pesquisa-icon">🔍</span>
+        <input type="text" placeholder="Filme ou série...">
       </div>
 
     </header>
 
-    <!-- HERO -->
+    <!-- ==================== HERO ==================== -->
 
+    <!-- Seção principal de destaque (banner) -->
     <section class="hero">
 
-      <!-- LADO ESQUERDO -->
+      <!-- Lado esquerdo do hero: texto e botões -->
+      <div class="hero-esquerdo">
 
-      <div class="hero-content">
-
+        <!-- Etiqueta/badge acima do título -->
         <p class="tagline">Destaque</p>
 
+        <!-- Título do conteúdo em destaque -->
         <h1>The Boys</h1>
 
-        <p class="description">
+        <!-- Sinopse curta do conteúdo -->
+        <p class="descricao">
           The Boys explora um mundo que mostra o que acontece quando os super-heróis são tão populares como celebridades, influentes como políticos e respeitados como deuses.
         </p>
 
+        <!-- Botões de ação -->
         <div class="buttons">
 
+          <!-- Botão principal: leva para assistir -->
           <button class="btn-preto">
             Ver Agora
           </button>
 
+          <!-- Botão secundário: mais detalhes -->
           <button class="btn-branco">
             Mais info
           </button>
 
+         
         </div>
-
       </div>
 
-      <!-- IMAGEM -->
 
-      <div class="hero-image-side">
-
-        <img 
-          src="#"
-          alt="The Boys"
-        >
-
-      </div>
-
+        <div class="imagem-central">
+          <img src="./img/img_mario.png" alt="" class="img-fundo">
+        </div>
     </section>
+
+  </div> <!-- Fecha #main -->
 
   </body>
   </html>
